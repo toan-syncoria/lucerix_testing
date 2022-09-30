@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="sale_report_inherit" inherit_id="sale.report_saleorder_document" name="Invoice Inherit Report">
+        <xpath expr="//th[@name='th_description']" position="after">
+            <th name="th_customer_code" class="text-left">
+                <span>Customer Code</span>
+
+            </th>
+            <th name="th_internal_ref" class="text-left">
+                 <span>Internal Reference</span>
+            </th>
+        </xpath>
+
+        <xpath expr="//td[@name='td_quantity']" position="before">
+
+            <td name="" class="text-left">
+                <span t-field="line.customer_product_code"/>
+
+            </td>
+            <td class="text-left">
+                <span t-field="line.product_default_code"/>
+
+            </td>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mass_duplicate,access.mass.duplicate,model_mass_duplicate,,1,1,1,1

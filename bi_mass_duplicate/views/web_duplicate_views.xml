@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend_extend" name="list extend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/bi_mass_duplicate/static/src/js/list_extend.js"></script>
+        </xpath>
+    </template>
+</odoo>

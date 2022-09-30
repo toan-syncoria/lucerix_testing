@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_form_customer_references_inherit" model="ir.ui.view">
+            <field name="name">view.order.form.customer.references.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="context">{
+                            'name_get_from_so': True,
+                            'partner_id': parent.partner_id,
+                            'quantity': product_uom_qty,
+                            'pricelist': parent.pricelist_id,
+                            'uom':product_uom,
+                            'company_id': parent.company_id,
+                            'default_lst_price': price_unit,
+                            'default_description_sale': name
+                        }</attribute>
+                    
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_picking_form_inherit_customer_reference" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='show_operations']" position="after">
+                    <field name="sale_id" invisible="1" readonly="1"/>
+                </xpath>
+                <xpath expr="//page[@name='operations']" position="after">
+                    <page string="Sale Order" name="sale_order_line" attrs="{'invisible': [('sale_id', '=', False)]}">
+                        <field name="sale_order_line_ids">
+                            <tree>
+                                <field name="product_id"/>
+                                <field name="customer_product_code"/>
+                                <field name="product_uom_qty"/>
+                                <field name="commitment_date"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record> 
+    </data>
+</odoo>

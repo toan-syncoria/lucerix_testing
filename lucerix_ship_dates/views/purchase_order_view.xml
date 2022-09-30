@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_order_form_inherit_lucerix_ship_dates" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit.lucerix.ship.dates</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='products']/field[@name='order_line']/tree/field[@name='date_planned']" position="replace">
+                    <field name="date_planned" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
